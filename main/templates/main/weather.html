@@ -1,0 +1,75 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Information</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Add any CSS styles or external CSS links here -->
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+</head>
+<body>
+    <div class='container'>
+        <div class="weather-box">
+            <h1>Weather Information for {{ city }}</h1>
+            <p>Temperature: {{ temperature }}°C</p>
+            <!-- Additional weather details -->
+            <p>Humidity: {{ humidity }}%</p>
+            <p>Weather Description: {{ weather_description }}%</p>
+        </div>
+
+        <canvas id="temperatureChart" width="400" height="200"></canvas>
+
+
+        <!-- JavaScript for Chart.js -->
+    <script>
+        // Weather data for temperature (example)
+        const temperatureData = [20, 22, 25, 23, 27, 29, 28];
+        
+        // Create a chart
+        const temperatureChartCanvas = document.getElementById('temperatureChart');
+        const temperatureChart = new Chart(temperatureChartCanvas, {
+            type: 'line', // Line chart type
+            data: {
+                labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Day 7'],
+                datasets: [{
+                    label: 'Temperature (°C)',
+                    data: temperatureData,
+                    borderColor: 'rgba(255, 99, 132, 1)', // Line color
+                    borderWidth: 2,
+                    fill: false, // Do not fill the area under the line
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        display: true,
+                        title: {
+                            display: true,
+                            text: 'Days'
+                        }
+                    },
+                    y: {
+                        display: true,
+                        title: {
+                            display: true,
+                            text: 'Temperature (°C)'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+        
+        <!-- You can add more weather details here, like humidity, weather conditions, etc. -->
+        
+        <a href="{% url 'weather_form' %}">Search Again</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+/* style.css */
+
+/* Apply a background gradient */
+body {
+    background: linear-gradient(edede9, #d5bdaf, #ffb703);
+    font-family: Arial, sans-serif;
+    color: #0d0404; /* Set text color to white */
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container styles */
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Header styles */
+h1 {
+    font-size: 24px;
+    color: #f39c12;
+    margin-bottom: 20px;
+}
+
+/* Box for weather information */
+.weather-box {
+    padding: 20px;
+    background-color: #fff; /* White background for the box */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+/* Paragraph styles */
+p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* Link styles */
+a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f39c12; /* Orange color for links */
+    color: #090505;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+a:hover {
+    background-color: #d35400; /* Darker orange on hover */
+}
